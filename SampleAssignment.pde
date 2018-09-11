@@ -69,10 +69,10 @@ void ball() {
     }
   }
   x+=a;
-  println("screen value is " + screen);
-  println("y value is " + y);
-  println("b value is " + b);
-  println("");
+  //println("screen value is " + screen);
+  //println("y value is " + y);
+  //println("b value is " + b);
+  //println("");
 }
 
 void dt(float x, float y) {
