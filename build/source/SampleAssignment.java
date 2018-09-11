@@ -19,6 +19,7 @@ public void setup() {
   frameRate(60);
 }
 int screen = 0;
+int shoot = 0;
 int angle = 0;
 float a = angle, b = 30.0f;
 int xPos = 200;
@@ -31,6 +32,9 @@ public void draw() {
   line(0,450,500,450);
   dt(xPos,430);
   if (keyCode == UP || key == 'w') {
+    screen = 1;
+  }
+  if (screen == 1) {
     ball();
   }
 }
@@ -58,16 +62,16 @@ public void ball() {
   }
 
   //going up the first time
-  if (screen == 0) {
+  if (shoot == 0) {
     y-=b;
     b = b/1.1f;
     if (b<=0.5f) {
-      screen++;
+      shoot++;
     }
   }
 
   //bouncing
-  if (screen == 1) {
+  if (shoot == 1) {
     y+=b;
     if (y>=425 && b+b/1.2f>1.1f) {
       b = -b;
@@ -85,10 +89,10 @@ public void ball() {
     }
   }
   x+=a;
-  println("screen value is " + screen);
-  println("y value is " + y);
-  println("b value is " + b);
-  println("");
+  //println("screen value is " + screen);
+  //println("y value is " + y);
+  //println("b value is " + b);
+  //println("");
 }
 
 public void dt(float x, float y) {
